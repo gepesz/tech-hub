@@ -1,0 +1,53 @@
+<?xml version='1.0' ?>
+<!DOCTYPE jboss PUBLIC
+   "-//JBoss//DTD JBOSS 3.2//EN"
+   "http://www.jboss.org/j2ee/dtd/jboss_3_2.dtd">
+
+<jboss>
+   <enterprise-beans>
+      <entity>
+         <ejb-name>Access</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/AccessHome</local-jndi-name>
+      </entity>
+      <entity>
+         <ejb-name>Difficulty</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/DifficultyHome</local-jndi-name>
+      </entity>
+      <entity>
+         <ejb-name>Locale</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/LocaleHome</local-jndi-name>
+      </entity>
+      <entity>
+         <ejb-name>Priority</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/PriorityHome</local-jndi-name>
+      </entity>
+      <entity>
+         <ejb-name>Project</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/ProjectHome</local-jndi-name>
+      </entity>
+      <entity>
+         <ejb-name>ProjectAccess</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/ProjectAccessHome</local-jndi-name>
+      </entity>
+      <entity>
+         <ejb-name>Task</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/TaskHome</local-jndi-name>
+      </entity>
+      <entity>
+         <ejb-name>TaskStatus</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/TaskStatusHome</local-jndi-name>
+      </entity>
+      <entity>
+         <ejb-name>TaskType</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/TaskTypeHome</local-jndi-name>
+      </entity>
+      <entity>
+         <ejb-name>User</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/UserHome</local-jndi-name>
+      </entity>
+      <entity>
+         <ejb-name>UserType</ejb-name>
+         <local-jndi-name>com/vh/manchester/ejb/UserTypeHome</local-jndi-name>
+      </entity>
+   </enterprise-beans>
+</jboss>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!-- Data Sources -->
+	<data-sources>
+	</data-sources>
+
+	<!-- Form Beans -->
+	<form-beans>
+		
+		<!-- loginform -->
+		<form-bean name="loginform" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="username" type="java.lang.String" />
+			<form-property name="password" type="java.lang.String" />
+		</form-bean>		
+
+		<!-- taskform -->
+		<form-bean name="taskform" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id"          type="java.lang.Integer" />
+			<form-property name="title"       type="java.lang.String"  />
+			<form-property name="summary"     type="java.lang.String"  />
+			<form-property name="type"        type="java.lang.Integer" />
+			<form-property name="status"      type="java.lang.Integer" />
+			<form-property name="priority"    type="java.lang.Integer" />
+			<form-property name="difficulty"  type="java.lang.Integer" />
+			<form-property name="projectId"   type="java.lang.Integer" />
+			<form-property name="plannedDate" type="java.lang.String"  />
+			<form-property name="assignedTo"  type="java.lang.Integer" />
+			<form-property name="comment"     type="java.lang.String"  />
+			<form-property name="progress"    type="java.lang.Integer" />
+		</form-bean>		
+
+		<!-- filterform -->
+		<form-bean name="filterform" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="fsearch"      type="java.lang.String"  />
+			<form-property name="fstatus"      type="java.lang.Integer" />
+			<form-property name="fassignedTo"  type="java.lang.Integer" />
+			<form-property name="freportedBy"  type="java.lang.Integer" />
+			<form-property name="fwhen"  	   type="java.lang.Integer" />
+		</form-bean>		
+
+		<!-- userform -->
+		<form-bean name="userform" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id"          type="java.lang.Integer"/>
+			<form-property name="my"          type="java.lang.Integer"/>
+			<form-property name="pwChanged"   type="java.lang.Integer"/>
+			<form-property name="username"    type="java.lang.String" />
+			<form-property name="password"    type="java.lang.String" />
+			<form-property name="oldpassword" type="java.lang.String" />
+			<form-property name="newpassword" type="java.lang.String" />
+			<form-property name="email"       type="java.lang.String" />
+			<form-property name="type"        type="java.lang.Integer"/>
+			<form-property name="locale"      type="java.lang.Integer"/>			
+		</form-bean>		
+
+		<!-- projectform -->
+		<form-bean name="projectform" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="project"  type="java.lang.Integer"	 />			
+			<form-property name="desc"     type="java.lang.String"	 />
+			<form-property name="uIds"     type="java.lang.Integer[]"/>									
+			<form-property name="userId"   type="java.lang.Integer[]"/>			
+			<form-property name="access"   type="java.lang.Integer[]"/>			
+		</form-bean>		
+
+		<!-- integerform -->
+		<form-bean name="integerform" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="number"  type="java.lang.Integer"	 />			
+		</form-bean>		
+
+		<!-- deleteform -->
+		<form-bean name="deleteform" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id"   type="java.lang.Integer[]"/>			
+		</form-bean>		
+
+	</form-beans>
+
+	<!-- Global Exceptions -->
+	<global-exceptions>
+	</global-exceptions>
+
+	<!-- Global Forwards -->
+	<global-forwards>
+		<forward name="error"      path="/jsp/error.jsp" />
+		<forward name="login"      path="/jsp/login.jsp" />
+		<forward name="logout"     path="/jsp/logout.jsp"/>
+		<forward name="SSODetect"  path="/SSODetect.do"/>
+	</global-forwards>
+
+	<!-- Action Mappings -->
+	<action-mappings>
+
+		<!-- Login Action -->
+		<action path="/Login"
+            name="loginform"
+           scope="request"
+            type="com.vh.manchester.actions.Login"
+           input="/jsp/login.jsp"
+        validate="false">
+		  <forward name="failure" path="/jsp/login.jsp"/>
+		  <forward name="success" path="/jsp/base.jsp"/>
+		</action>
+
+		<!-- Logout Action -->
+		<action path="/Logout" 
+            type="com.vh.manchester.actions.Logout">
+		  <forward name="success" path="/jsp/login.jsp"/>
+		</action>
+
+		<!-- SSODetect Action -->
+		<action path="/SSODetect" 
+            type="com.vh.manchester.actions.SSODetect">
+		  <forward name="failure" path="/jsp/login.jsp"/>
+		  <forward name="success" path="/Login.do"/>
+		</action>
+
+
+		<!-- ******************  Header  *********************** -->
+	
+		<!-- PopulateHeader Action -->
+		<action path="/PopulateHeader" 
+            name="projectform"
+           scope="request"				
+            type="com.vh.manchester.actions.PopulateHeader"
+           input="/PopulateHeader.do"
+        validate="false">
+		  <forward name="success" path="/jsp/header.jsp"/>
+		</action>
+
+		<!-- ChangeProject Action -->
+		<action path="/ChangeProject" 
+            name="projectform"
+           scope="request"				
+            type="com.vh.manchester.actions.ChangeProject"
+           input="/ChangeProject.do"
+        validate="false">
+		  <forward name="success" path="/jsp/base.jsp"/>
+		</action>
+
+		<!-- ViewUser Action -->
+		<action path="/ViewUser" 
+            name="userform"
+           scope="request"		
+            type="com.vh.manchester.actions.ViewUser"
+           input="/ViewUser.do"
+        validate="false">				   
+		  <forward name="success" path="/jsp/edituser.jsp"/>
+		</action>
+
+		<!-- SaveUser Action -->
+		<action path="/SaveUser" 
+            name="userform"
+           scope="request"		
+            type="com.vh.manchester.actions.SaveUser"
+           input="/ViewUser.do"
+        validate="true">				   
+		  <forward name="failure"   path="/ViewUser.do"/>
+		  <forward name="viewtasks" path="/RetrieveTasks.do"/>
+		  <forward name="viewusers" path="/RetrieveUsers.do"/>
+		</action>
+
+		<!-- ******************  End Header  *********************** -->
+		<!-- ******************  Sidebar  *********************** -->
+
+		<!-- PopulateSidebar Action -->
+		<action path="/PopulateSidebar" 
+            type="com.vh.manchester.actions.PopulateSidebar">
+		  <forward name="success" path="/jsp/sidebar.jsp"/>
+		</action>
+
+		<!-- SetFilters Action -->
+		<action path="/SetFilters" 
+            name="filterform"
+           scope="request"		
+            type="com.vh.manchester.actions.SetFilters"
+           input="/SetFilters.do"
+        validate="false">				   
+		  <forward name="success" path="/RetrieveTasks.do"/>
+		</action>
+
+		<!-- RetrieveTasks Action -->
+		<action path="/RetrieveTasks" 
+            name="filterform"
+           scope="request"		
+            type="com.vh.manchester.actions.RetrieveTasks"
+           input="/RetrieveTasks.do"
+        validate="false">				   
+		  <forward name="success" path="/jsp/viewtasks.jsp"/>
+		</action>
+
+		<!-- ViewCreateTask Action -->
+		<action path="/ViewCreateTask" 
+            type="com.vh.manchester.actions.ViewCreateTask">
+		  <forward name="success" path="/jsp/createtask.jsp"/>
+		</action>
+
+		<!-- SaveCreateTask Action -->
+		<action path="/SaveCreateTask"
+            name="taskform"
+           scope="request"		
+            type="com.vh.manchester.actions.SaveCreateTask"
+           input="/ViewCreateTask.do"
+        validate="true">				   
+		  <forward name="success"  path="/RetrieveTasks.do"/>
+		</action>
+
+		<!-- DeleteTasks Action -->
+		<action path="/DeleteTasks" 
+            name="deleteform"
+           scope="request"
+            type="com.vh.manchester.actions.DeleteTasks"
+        validate="false">				   
+		  <forward name="success" path="/RetrieveTasks.do"/>
+		</action>
+
+		<!-- RetrieveUsers Action -->
+		<action path="/RetrieveUsers" 
+            type="com.vh.manchester.actions.RetrieveUsers">
+		  <forward name="success" path="/jsp/viewusers.jsp"/>
+		</action>
+
+		<!-- Monitor Action -->
+		<action path="/Monitor" 
+            type="com.vh.manchester.actions.Monitor">
+		  <forward name="success" path="/jsp/monitor.jsp"/>
+		</action>
+
+		<!-- ViewCreateUser Action -->
+		<action path="/ViewCreateUser" 
+            type="com.vh.manchester.actions.ViewCreateUser">
+		  <forward name="success" path="/jsp/createuser.jsp"/>
+		</action>
+
+		<!-- SaveCreateUser Action -->
+		<action path="/SaveCreateUser" 
+            name="userform"
+           scope="request"		
+            type="com.vh.manchester.actions.SaveCreateUser"
+		   input="/ViewCreateUser.do"
+        validate="true">		
+		  <forward name="failure" path="/ViewCreateUser.do"/>
+		  <forward name="success" path="/RetrieveUsers.do"/>
+		</action>
+
+		<!-- DeleteUsers Action -->
+		<action path="/DeleteUsers" 
+            name="deleteform"
+           scope="request"
+            type="com.vh.manchester.actions.DeleteUsers"
+        validate="false">				   
+		  <forward name="success" path="/RetrieveUsers.do"/>
+		</action>
+
+		<!-- RetrieveProjects Action -->
+		<action path="/RetrieveProjects" 
+            type="com.vh.manchester.actions.RetrieveProjects">
+		  <forward name="success" path="/jsp/viewprojects.jsp"/>
+		</action>
+
+		<!-- ViewProject Action -->
+		<action path="/ViewProject" 
+            name="projectform"
+           scope="request"		
+            type="com.vh.manchester.actions.ViewProject"
+           input="/ViewProject.do"
+        validate="false">				   
+		  <forward name="success" path="/jsp/editproject.jsp"/>
+		</action>
+
+		<!-- SaveProject Action -->
+		<action path="/SaveProject" 
+            name="projectform"
+           scope="request"	
+            type="com.vh.manchester.actions.SaveProject"
+           input="/ViewProject.do"
+        validate="true">
+		  <forward name="failure"   path="/ViewProject.do"/>
+		  <forward name="success"   path="/RetrieveProjects.do"/>
+		</action>
+
+		<!-- ViewCreateProject Action -->
+		<action path="/ViewCreateProject" 
+            type="com.vh.manchester.actions.ViewCreateProject">
+		  <forward name="success" path="/jsp/createproj.jsp"/>
+		</action>
+
+		<!-- SaveCreateProject Action -->
+		<action path="/SaveCreateProject" 
+            name="projectform"
+           scope="request"		
+            type="com.vh.manchester.actions.SaveCreateProject"
+				   input="/ViewCreateProject.do"
+        validate="true">		
+		  <forward name="failure" path="/ViewCreateProject.do"/>				   		   
+		  <forward name="success" path="/RetrieveProjects.do"/>
+		</action>
+
+		<!-- DeleteProjects Action -->
+		<action path="/DeleteProjects" 
+            name="deleteform"
+           scope="request"
+            type="com.vh.manchester.actions.DeleteProjects"
+        validate="false">				   
+		  <forward name="success" path="/RetrieveProjects.do"/>
+		</action>
+
+		<!-- ******************  End Sidebar  *********************** -->
+		<!-- ******************  Main  *********************** -->
+
+		<!-- ViewTask Action -->
+		<action path="/ViewTask" 
+            name="taskform"
+           scope="request"		
+            type="com.vh.manchester.actions.ViewTask"
+           input="/ViewTask.do"
+        validate="false">				   
+		  <forward name="success" path="/jsp/edittask.jsp"/>
+		</action>
+
+		<!-- SaveTask Action -->
+		<action path="/SaveTask" 
+            name="taskform"
+           scope="request"		
+            type="com.vh.manchester.actions.SaveTask"
+           input="/ViewTask.do"
+        validate="true">				   
+		  <forward name="failure" path="/ViewTask.do"/>
+		  <forward name="success" path="/RetrieveTasks.do"/>
+		</action>
+
+		<!-- ******************  End Main  *********************** -->
+	</action-mappings>
+
+
+	<!-- Controller -->
+	<controller debug="2" locale="true"/>	
+
+
+	<!-- Message Resources -->
+	<message-resources parameter="com.vh.manchester.resources.application"/>
+
+	
+	<!-- Validator Plugin -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames" value="/WEB-INF/validator-rules.xml,
+                                                  /WEB-INF/validation.xml"/>
+	</plug-in>
+	<!-- Add multiple validator resource files by setting the pathnames property 
+		 with a comma delimitted list of resource files to load. -->
+
+
+</struts-config>

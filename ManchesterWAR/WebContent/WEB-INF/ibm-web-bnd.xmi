@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webappbnd:WebAppBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:webappbnd="webappbnd.xmi" xmlns:common="common.xmi" xmi:id="WebAppBinding_1" virtualHostName="default_host">
+  <webapp href="WEB-INF/web.xml#WebApp"/>
+  <ejbRefBindings xmi:id="EjbRefBinding_1067809680479" jndiName="ejb/DifficultyHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1067809680479"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1067809680519" jndiName="ejb/LocaleHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1067809680519"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1067809680549" jndiName="ejb/MessageHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1067809680549"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1067809680569" jndiName="ejb/PriorityHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1067809680569"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1067809680579" jndiName="ejb/TaskHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1067809680579"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1067809680599" jndiName="ejb/TaskStatusHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1067809680599"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1067809680609" jndiName="ejb/TaskTypeHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1067809680609"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1067809680629" jndiName="ejb/UserHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1067809680629"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1067809680649" jndiName="ejb/UserTypeHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1067809680649"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1081106456124" jndiName="ejb/ProjectHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1081106456124"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1081106456125" jndiName="ejb/ProjectAccessHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1081106456125"/>
+  </ejbRefBindings>
+  <ejbRefBindings xmi:id="EjbRefBinding_1082229543875" jndiName="ejb/AccessHome">
+    <bindingEjbRef xmi:type="common:EJBLocalRef" href="WEB-INF/web.xml#EJBLocalRef_1082229543875"/>
+  </ejbRefBindings>
+</webappbnd:WebAppBinding>

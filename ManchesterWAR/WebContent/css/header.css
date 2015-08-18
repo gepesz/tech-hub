@@ -1,0 +1,45 @@
+body {
+    background-color: #003366;
+    color: #ffffff;
+    font-family: "verdana";
+    font-size: 10px;
+    text-align: left;
+    text-decoration: none;
+    margin: 0cm;
+}
+
+table {
+	font-family: "verdana";
+	font-size: 10px;
+	color: #ffffff;
+	border: 0px solid red;
+	margin: 10 0 1 5; 
+	text-align: left;
+	padding: 0;
+	width: 99%;
+}
+
+td {
+	vertical-align: middle;
+}
+
+.tdlabel {
+	padding-right: 5;
+	vertical-align: middle;
+	width: 1%;
+}
+
+a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+a:hover {
+	color: #ffffff;
+	text-decoration: underline
+}
+
+.projectdropdown {
+	width:150px;
+	font-size:10px;	
+}

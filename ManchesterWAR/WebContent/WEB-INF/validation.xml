@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+
+<form-validation>
+   <global>
+      <constant>
+        <constant-name>MAXFORMLENGTH1</constant-name>
+        <constant-value>250</constant-value>
+      </constant>
+      <constant>
+        <constant-name>MAXFORMLENGTH2</constant-name>
+        <constant-value>4000</constant-value>
+      </constant>
+      <constant>
+        <constant-name>phone</constant-name>
+        <constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value>
+      </constant>
+      <constant>
+        <constant-name>zip</constant-name>
+        <constant-value>^\d{5}\d*$</constant-value>
+      </constant>
+   </global>
+   <formset>
+      <constant>
+        <constant-name>zip</constant-name>
+        <constant-value>^\d{5}(-\d{4})?$</constant-value>
+      </constant>
+
+      <form name="loginform">
+         <field property="username"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.Username"/>
+         </field>
+         <field property="password"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.Password"/>
+         </field>
+      </form>
+
+      <form name="taskform">
+         <field property="title"
+         	     depends="required,maxlength">
+         	     <arg0 key="com.vh.label.Title"/>
+         	     <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>${MAXFORMLENGTH1}</var-value>
+                     </var>         	     
+         </field>
+         <field property="summary"
+         	     depends="required,maxlength">
+         	     <arg0 key="com.vh.label.Summary"/>
+         	     <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>${MAXFORMLENGTH2}</var-value>
+                     </var>         	     
+         </field>
+         <field property="type"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.Type"/>
+         </field>
+         <field property="priority"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.Priority"/>
+         </field>
+         <field property="difficulty"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.Difficulty"/>
+         </field>
+         <field property="status"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.Difficulty"/>
+         </field>
+         <field property="projectId"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.Project"/>
+         </field>
+         <field property="assignedTo"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.AssignedTo"/>
+         </field>
+         <field property="plannedDate"
+         	     depends="required,date">
+         	     <arg0 key="com.vh.label.PlannedDate"/>
+                     <var>
+                       <var-name>datePattern</var-name>
+                       <var-value>yyyy-MM-dd</var-value>
+                     </var>         	     
+         </field>
+         <field property="comment"
+         	     depends="maxlength">
+         	     <arg0 key="com.vh.label.Comment"/>
+         	     <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>${MAXFORMLENGTH2}</var-value>
+                     </var>         	     
+         </field>
+      </form>
+
+      <form name="userform">
+         <field property="username"
+         	     depends="required,maxlength">
+         	     <arg0 key="com.vh.label.Username"/>
+         	     <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>${MAXFORMLENGTH1}</var-value>
+                     </var>         	     
+         </field>
+         <field property="password"
+         	     depends="required,maxlength">
+         	     <arg0 key="com.vh.label.Password"/>
+         	     <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>${MAXFORMLENGTH1}</var-value>
+                     </var>         	     
+         </field>
+         <field property="email"
+         	     depends="required,maxlength,email">
+         	     <arg0 key="com.vh.label.Email"/>
+         	     <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>${MAXFORMLENGTH1}</var-value>
+                     </var>         	     
+         </field>
+         <field property="type"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.Type"/>
+         </field>
+         <field property="locale"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.Language"/>
+         </field>
+      </form>
+
+      <form name="settingsform">
+         <field property="username"
+         	     depends="required,maxlength">
+         	     <arg0 key="com.vh.label.Username"/>
+         	     <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>${MAXFORMLENGTH1}</var-value>
+                     </var>         	     
+         </field>
+         <field property="email"
+         	     depends="required,maxlength,email">
+         	     <arg0 key="com.vh.label.Email"/>
+         	     <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>${MAXFORMLENGTH1}</var-value>
+                     </var>         	     
+         </field>
+         <field property="locale"
+         	     depends="required">
+         	     <arg0 key="com.vh.label.Language"/>
+         </field>
+      </form>
+
+      <form name="projectform">
+         <field property="desc"
+         	     depends="required,maxlength">
+         	     <arg0 key="com.vh.label.Projectname"/>
+				 <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>${MAXFORMLENGTH1}</var-value>
+                     </var>          	     
+         </field>
+      </form>
+
+   </formset>
+</form-validation>

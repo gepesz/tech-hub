@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ejb-jar PUBLIC "-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
+<ejb-jar id="ejb-jar_ID">
+	<display-name>ManchesterEJB</display-name>
+	<enterprise-beans>
+		<entity id="TaskType">
+			<ejb-name>TaskType</ejb-name>
+			<local-home>com.vh.manchester.ejb.TaskTypeHome</local-home>
+			<local>com.vh.manchester.ejb.TaskType</local>
+			<ejb-class>com.vh.manchester.ejb.TaskTypeBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>TaskType</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1067793369458">
+				<field-name>id</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793371782">
+				<field-name>desc</field-name>
+			</cmp-field>
+			<primkey-field>id</primkey-field>
+			<ejb-local-ref id="EJBLocalRef_1067543804030">
+				<ejb-ref-name>ejb/Task</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.TaskHome</local-home>
+				<local>com.vh.manchester.ejb.Task</local>
+				<ejb-link>Task</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from TaskType o</ejb-ql>
+			</query>
+		</entity>
+		<entity id="TaskStatus">
+			<ejb-name>TaskStatus</ejb-name>
+			<local-home>com.vh.manchester.ejb.TaskStatusHome</local-home>
+			<local>com.vh.manchester.ejb.TaskStatus</local>
+			<ejb-class>com.vh.manchester.ejb.TaskStatusBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>TaskStatus</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1067793371802">
+				<field-name>id</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793371832">
+				<field-name>desc</field-name>
+			</cmp-field>
+			<primkey-field>id</primkey-field>
+			<ejb-local-ref id="EJBLocalRef_1067543804120">
+				<ejb-ref-name>ejb/Task</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.TaskHome</local-home>
+				<local>com.vh.manchester.ejb.Task</local>
+				<ejb-link>Task</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from TaskStatus o</ejb-ql>
+			</query>
+		</entity>
+		<entity id="Difficulty">
+			<ejb-name>Difficulty</ejb-name>
+			<local-home>com.vh.manchester.ejb.DifficultyHome</local-home>
+			<local>com.vh.manchester.ejb.Difficulty</local>
+			<ejb-class>com.vh.manchester.ejb.DifficultyBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>Difficulty</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1067793371842">
+				<field-name>id</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793371862">
+				<field-name>desc</field-name>
+			</cmp-field>
+			<primkey-field>id</primkey-field>
+			<ejb-local-ref id="EJBLocalRef_1067543804150">
+				<ejb-ref-name>ejb/Task</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.TaskHome</local-home>
+				<local>com.vh.manchester.ejb.Task</local>
+				<ejb-link>Task</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from Difficulty o</ejb-ql>
+			</query>
+		</entity>
+		<entity id="Priority">
+			<ejb-name>Priority</ejb-name>
+			<local-home>com.vh.manchester.ejb.PriorityHome</local-home>
+			<local>com.vh.manchester.ejb.Priority</local>
+			<ejb-class>com.vh.manchester.ejb.PriorityBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>Priority</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1067793371872">
+				<field-name>id</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793371882">
+				<field-name>desc</field-name>
+			</cmp-field>
+			<primkey-field>id</primkey-field>
+			<ejb-local-ref id="EJBLocalRef_1067543804260">
+				<ejb-ref-name>ejb/Task</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.TaskHome</local-home>
+				<local>com.vh.manchester.ejb.Task</local>
+				<ejb-link>Task</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from Priority o</ejb-ql>
+			</query>
+		</entity>
+		<entity id="Locale">
+			<ejb-name>Locale</ejb-name>
+			<local-home>com.vh.manchester.ejb.LocaleHome</local-home>
+			<local>com.vh.manchester.ejb.Locale</local>
+			<ejb-class>com.vh.manchester.ejb.LocaleBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>Locale</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1067793371982">
+				<field-name>id</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372012">
+				<field-name>desc</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1068175795906">
+				<field-name>loc</field-name>
+			</cmp-field>
+			<primkey-field>id</primkey-field>
+			<ejb-local-ref id="EJBLocalRef_1067543955800">
+				<ejb-ref-name>ejb/User</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.UserHome</local-home>
+				<local>com.vh.manchester.ejb.User</local>
+				<ejb-link>User</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from Locale o</ejb-ql>
+			</query>
+		</entity>
+		<entity id="UserType">
+			<ejb-name>UserType</ejb-name>
+			<local-home>com.vh.manchester.ejb.UserTypeHome</local-home>
+			<local>com.vh.manchester.ejb.UserType</local>
+			<ejb-class>com.vh.manchester.ejb.UserTypeBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>UserType</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1067793372072">
+				<field-name>id</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372082">
+				<field-name>desc</field-name>
+			</cmp-field>
+			<primkey-field>id</primkey-field>
+			<ejb-local-ref id="EJBLocalRef_1067543955810">
+				<ejb-ref-name>ejb/User</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.UserHome</local-home>
+				<local>com.vh.manchester.ejb.User</local>
+				<ejb-link>User</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from UserType o</ejb-ql>
+			</query>
+		</entity>
+		<entity id="User">
+			<ejb-name>User</ejb-name>
+			<local-home>com.vh.manchester.ejb.UserHome</local-home>
+			<local>com.vh.manchester.ejb.User</local>
+			<ejb-class>com.vh.manchester.ejb.UserBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>User</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1067793372092">
+				<field-name>id</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372172">
+				<field-name>username</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372243">
+				<field-name>password</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372323">
+				<field-name>email</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372393">
+				<field-name>lastLogin</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372443">
+				<field-name>nofLogins</field-name>
+			</cmp-field>
+			<primkey-field>id</primkey-field>
+			<ejb-local-ref id="EJBLocalRef_1067543955820">
+				<ejb-ref-name>ejb/Locale</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.LocaleHome</local-home>
+				<local>com.vh.manchester.ejb.Locale</local>
+				<ejb-link>Locale</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1067543955830">
+				<ejb-ref-name>ejb/UserType</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.UserTypeHome</local-home>
+				<local>com.vh.manchester.ejb.UserType</local>
+				<ejb-link>UserType</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1067544493496">
+				<ejb-ref-name>ejb/Task</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.TaskHome</local-home>
+				<local>com.vh.manchester.ejb.Task</local>
+				<ejb-link>Task</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1081105451109">
+				<ejb-ref-name>ejb/ProjectAccess</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.ProjectAccessHome</local-home>
+				<local>com.vh.manchester.ejb.ProjectAccess</local>
+				<ejb-link>ProjectAccess</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1081115398804">
+				<ejb-ref-name>ejb/Project</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.ProjectHome</local-home>
+				<local>com.vh.manchester.ejb.Project</local>
+				<ejb-link>Project</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from User o</ejb-ql>
+			</query>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findByUsername</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(a) from User a where  a.username=?1</ejb-ql>
+			</query>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findByProject</method-name>
+					<method-params>
+						<method-param>java.lang.Integer</method-param>
+					</method-params>
+				</query-method>
+				<ejb-ql>SELECT OBJECT(a) FROM User a, IN (a.projectAccess) b WHERE b.projectId=?1</ejb-ql>
+			</query>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findDevelopersByProject</method-name>
+					<method-params>
+						<method-param>java.lang.Integer</method-param>
+					</method-params>
+				</query-method>
+				<ejb-ql>SELECT OBJECT(a) FROM User a, IN (a.projectAccess) b WHERE b.projectId=?1 AND b.access.id&gt;1</ejb-ql>
+			</query>
+		</entity>
+		<entity id="Task">
+			<ejb-name>Task</ejb-name>
+			<local-home>com.vh.manchester.ejb.TaskHome</local-home>
+			<local>com.vh.manchester.ejb.Task</local>
+			<ejb-class>com.vh.manchester.ejb.TaskBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>Task</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1067793372523">
+				<field-name>id</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372563">
+				<field-name>title</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372593">
+				<field-name>summary</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372673">
+				<field-name>plannedDate</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372683">
+				<field-name>createDate</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372693">
+				<field-name>comment</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1067793372703">
+				<field-name>progress</field-name>
+			</cmp-field>
+			<primkey-field>id</primkey-field>
+			<ejb-local-ref id="EJBLocalRef_1067543804290">
+				<ejb-ref-name>ejb/Difficulty</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.DifficultyHome</local-home>
+				<local>com.vh.manchester.ejb.Difficulty</local>
+				<ejb-link>Difficulty</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1067543804300">
+				<ejb-ref-name>ejb/TaskType</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.TaskTypeHome</local-home>
+				<local>com.vh.manchester.ejb.TaskType</local>
+				<ejb-link>TaskType</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1067543804310">
+				<ejb-ref-name>ejb/TaskStatus</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.TaskStatusHome</local-home>
+				<local>com.vh.manchester.ejb.TaskStatus</local>
+				<ejb-link>TaskStatus</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1067543804340">
+				<ejb-ref-name>ejb/Priority</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.PriorityHome</local-home>
+				<local>com.vh.manchester.ejb.Priority</local>
+				<ejb-link>Priority</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1067544493506">
+				<ejb-ref-name>ejb/User</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.UserHome</local-home>
+				<local>com.vh.manchester.ejb.User</local>
+				<ejb-link>User</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1081105023999">
+				<ejb-ref-name>ejb/Project</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.ProjectHome</local-home>
+				<local>com.vh.manchester.ejb.Project</local>
+				<ejb-link>Project</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from Task o</ejb-ql>
+			</query>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findByWho</method-name>
+					<method-params>
+						<method-param>java.lang.Integer</method-param>
+					</method-params>
+				</query-method>
+				<ejb-ql>SELECT OBJECT(a) FROM Task a WHERE a.who.id=?1</ejb-ql>
+			</query>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findByWhoOrCreatedBy</method-name>
+					<method-params>
+						<method-param>java.lang.Integer</method-param>
+					</method-params>
+				</query-method>
+				<ejb-ql>SELECT DISTINCT OBJECT(a) FROM Task a WHERE a.who.id=?1 OR a.createdBy.id=?1</ejb-ql>
+			</query>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findByProject</method-name>
+					<method-params>
+						<method-param>java.lang.Integer</method-param>
+					</method-params>
+				</query-method>
+				<ejb-ql>SELECT OBJECT(a) FROM Task a WHERE a.project.id=?1</ejb-ql>
+			</query>
+		</entity>
+		<entity id="Project">
+			<ejb-name>Project</ejb-name>
+			<local-home>com.vh.manchester.ejb.ProjectHome</local-home>
+			<local>com.vh.manchester.ejb.Project</local>
+			<ejb-class>com.vh.manchester.ejb.ProjectBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>Project</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1081109935851">
+				<field-name>id</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1081109935866">
+				<field-name>desc</field-name>
+			</cmp-field>
+			<primkey-field>id</primkey-field>
+			<ejb-local-ref id="EJBLocalRef_1081105024015">
+				<ejb-ref-name>ejb/Task</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.TaskHome</local-home>
+				<local>com.vh.manchester.ejb.Task</local>
+				<ejb-link>Task</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1081105451124">
+				<ejb-ref-name>ejb/ProjectAccess</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.ProjectAccessHome</local-home>
+				<local>com.vh.manchester.ejb.ProjectAccess</local>
+				<ejb-link>ProjectAccess</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1081115398820">
+				<ejb-ref-name>ejb/User</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.UserHome</local-home>
+				<local>com.vh.manchester.ejb.User</local>
+				<ejb-link>User</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from Project o</ejb-ql>
+			</query>
+		</entity>
+		<entity id="ProjectAccess">
+			<ejb-name>ProjectAccess</ejb-name>
+			<local-home>com.vh.manchester.ejb.ProjectAccessHome</local-home>
+			<local>com.vh.manchester.ejb.ProjectAccess</local>
+			<ejb-class>com.vh.manchester.ejb.ProjectAccessBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>com.vh.manchester.ejb.ProjectAccessKey</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>ProjectAccess</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1081109935882">
+				<field-name>projectId</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1081109935883">
+				<field-name>userId</field-name>
+			</cmp-field>
+			<ejb-local-ref id="EJBLocalRef_1081105451140">
+				<ejb-ref-name>ejb/Project</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.ProjectHome</local-home>
+				<local>com.vh.manchester.ejb.Project</local>
+				<ejb-link>Project</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1081105451141">
+				<ejb-ref-name>ejb/User</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.UserHome</local-home>
+				<local>com.vh.manchester.ejb.User</local>
+				<ejb-link>User</ejb-link>
+			</ejb-local-ref>
+			<ejb-local-ref id="EJBLocalRef_1081132725234">
+				<ejb-ref-name>ejb/Access</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.AccessHome</local-home>
+				<local>com.vh.manchester.ejb.Access</local>
+				<ejb-link>Access</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from ProjectAccess o</ejb-ql>
+			</query>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findByProject</method-name>
+					<method-params>
+						<method-param>java.lang.Integer</method-param>
+					</method-params>
+				</query-method>
+				<ejb-ql>SELECT OBJECT(a) FROM ProjectAccess a WHERE a.projectId=?1</ejb-ql>
+			</query>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findByUser</method-name>
+					<method-params>
+						<method-param>java.lang.Integer</method-param>
+					</method-params>
+				</query-method>
+				<ejb-ql>SELECT OBJECT(a) FROM ProjectAccess a WHERE a.userId=?1</ejb-ql>
+			</query>
+		</entity>
+		<entity id="Access">
+			<ejb-name>Access</ejb-name>
+			<local-home>com.vh.manchester.ejb.AccessHome</local-home>
+			<local>com.vh.manchester.ejb.Access</local>
+			<ejb-class>com.vh.manchester.ejb.AccessBean</ejb-class>
+			<persistence-type>Container</persistence-type>
+			<prim-key-class>java.lang.Integer</prim-key-class>
+			<reentrant>False</reentrant>
+			<cmp-version>2.x</cmp-version>
+			<abstract-schema-name>Access</abstract-schema-name>
+			<cmp-field id="CMPAttribute_1081134230484">
+				<field-name>id</field-name>
+			</cmp-field>
+			<cmp-field id="CMPAttribute_1081134230500">
+				<field-name>desc</field-name>
+			</cmp-field>
+			<primkey-field>id</primkey-field>
+			<ejb-local-ref id="EJBLocalRef_1081132725250">
+				<ejb-ref-name>ejb/ProjectAccess</ejb-ref-name>
+				<ejb-ref-type>Entity</ejb-ref-type>
+				<local-home>com.vh.manchester.ejb.ProjectAccessHome</local-home>
+				<local>com.vh.manchester.ejb.ProjectAccess</local>
+				<ejb-link>ProjectAccess</ejb-link>
+			</ejb-local-ref>
+			<query>
+				<description></description>
+				<query-method>
+					<method-name>findAll</method-name>
+					<method-params>
+					</method-params>
+				</query-method>
+				<ejb-ql>select object(o) from Access o</ejb-ql>
+			</query>
+		</entity>
+	</enterprise-beans>
+	<relationships>
+		<ejb-relation>
+			<description></description>
+			<ejb-relation-name>Difficulty-Task</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1067558459804">
+				<ejb-relationship-role-name>difficulty</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Task</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>difficulty</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1067793372713">
+				<ejb-relationship-role-name>task</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Difficulty</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>task</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description></description>
+			<ejb-relation-name>TaskType-Task</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1067558460385">
+				<ejb-relationship-role-name>tasktype</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Task</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>taskType</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1067793372714">
+				<ejb-relationship-role-name>task</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>TaskType</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>task</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description></description>
+			<ejb-relation-name>TaskStatus-Task</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1067558460755">
+				<ejb-relationship-role-name>taskstatus</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Task</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>taskStatus</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1067793372723">
+				<ejb-relationship-role-name>task</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>TaskStatus</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>task</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description></description>
+			<ejb-relation-name>Priority-Task</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1067558460885">
+				<ejb-relationship-role-name>priority</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Task</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>priority</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1067793372724">
+				<ejb-relationship-role-name>task</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Priority</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>task</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description></description>
+			<ejb-relation-name>Locale-User</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1067558460975">
+				<ejb-relationship-role-name>locale</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>User</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>locale</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1067793372493">
+				<ejb-relationship-role-name>user</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Locale</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>user</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description></description>
+			<ejb-relation-name>UserType-User</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1067558460985">
+				<ejb-relationship-role-name>usertype</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>User</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>userType</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1067793372503">
+				<ejb-relationship-role-name>user</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>UserType</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>user</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description>This is the assignedTo column on Task.</description>
+			<ejb-relation-name>User-Task1</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1067558461015">
+				<ejb-relationship-role-name>user</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Task</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>who</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1067793372733">
+				<ejb-relationship-role-name>task</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>User</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>assignedTasks</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description>This is the reportedBy column on Task.</description>
+			<ejb-relation-name>User-Task2</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1067558461025">
+				<ejb-relationship-role-name>user</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Task</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>createdBy</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1067793372734">
+				<ejb-relationship-role-name>task</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>User</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>createdTasks</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description></description>
+			<ejb-relation-name>Project-Task</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1081109935835">
+				<ejb-relationship-role-name>project</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Task</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>project</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1081109935851">
+				<ejb-relationship-role-name>task</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Project</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>task</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description></description>
+			<ejb-relation-name>ProjectAccess-Project</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1081109935898">
+				<ejb-relationship-role-name>project</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>ProjectAccess</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>project</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1081109935899">
+				<ejb-relationship-role-name>projectaccess</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Project</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>projectAccess</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description></description>
+			<ejb-relation-name>ProjectAccess-User</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1081109935900">
+				<ejb-relationship-role-name>user</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>ProjectAccess</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>user</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1081109935913">
+				<ejb-relationship-role-name>projectaccess</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>User</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>projectAccess</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description>This is used to figure out the last project the user worked on.</description>
+			<ejb-relation-name>User-Project</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1081115861241">
+				<ejb-relationship-role-name>project</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>User</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>lastProject</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1081115861242">
+				<ejb-relationship-role-name>user</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Project</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>user</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+		<ejb-relation>
+			<description></description>
+			<ejb-relation-name>Access-ProjectAccess</ejb-relation-name>
+			<ejb-relationship-role id="EJBRelationshipRole_1081134230171">
+				<ejb-relationship-role-name>access</ejb-relationship-role-name>
+				<multiplicity>Many</multiplicity>
+				<relationship-role-source>
+					<ejb-name>ProjectAccess</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>access</cmr-field-name>
+				</cmr-field>
+			</ejb-relationship-role>
+			<ejb-relationship-role id="EJBRelationshipRole_1081134230468">
+				<ejb-relationship-role-name>projectaccess</ejb-relationship-role-name>
+				<multiplicity>One</multiplicity>
+				<relationship-role-source>
+					<ejb-name>Access</ejb-name>
+				</relationship-role-source>
+				<cmr-field>
+					<cmr-field-name>projectAccess</cmr-field-name>
+					<cmr-field-type>java.util.Collection</cmr-field-type>
+				</cmr-field>
+			</ejb-relationship-role>
+		</ejb-relation>
+	</relationships>
+</ejb-jar>

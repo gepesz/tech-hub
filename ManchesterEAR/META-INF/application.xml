@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC "-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN" "http://java.sun.com/dtd/application_1_3.dtd">
+<application id="Application_ID">
+	<display-name>ManchesterEAR</display-name>
+	<module id="WebModule_1112647775153">
+		<web>
+			<web-uri>hub.war</web-uri>
+			<context-root>hub</context-root>
+		</web>
+	</module>
+	<module id="EjbModule_1112647828163">
+		<ejb>ManchesterEJB.jar</ejb>
+	</module>
+</application>

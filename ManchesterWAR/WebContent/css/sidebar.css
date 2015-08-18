@@ -1,0 +1,25 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "verdana";
+    font-size: 12px;
+    margin: 0 0 0 2;
+}
+
+a {
+	text-decoration: none;
+	color: #3333cc;
+}
+
+a:hover {
+	color: #3333cc;
+	text-decoration: underline
+}
+
+.hubAd {
+	float: right;
+	margin-right: 7px;
+	font-family: "verdana";
+	font-size: 10px;
+	color: #999999;
+}

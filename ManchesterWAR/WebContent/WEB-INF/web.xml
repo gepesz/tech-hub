@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app id="WebApp">
+	<display-name>ManchesterWAR</display-name>
+	<description>Web module for the Hub.</description>
+
+    
+	<context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>com.vh.manchester.resources.application</param-value>
+    </context-param>
+	
+	
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>application</param-name>
+			<param-value>com.vh.manchester.resources.application</param-value>
+		</init-param>		
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>validate</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+        <servlet-name>startupservlet</servlet-name>
+        <servlet-class>com.vh.manchester.servlet.StartupServlet</servlet-class>	
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+	
+		
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>startupservlet</servlet-name>
+        <url-pattern>/startupservlet</url-pattern>
+    </servlet-mapping>
+
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	
+	<welcome-file-list>
+		<welcome-file>jsp/index.jsp</welcome-file>
+	</welcome-file-list>
+
+
+    <error-page>
+    	<error-code>404</error-code>
+    	<location>/jsp/error404.jsp</location>
+    </error-page>
+	<error-page>
+    	<error-code>500</error-code>
+    	<location>/jsp/error.jsp</location>
+    </error-page>
+
+
+	<taglib>
+		<taglib-uri>/struts-bean</taglib-uri>
+		<taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/struts-html</taglib-uri>
+		<taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/struts-logic</taglib-uri>
+		<taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/struts-template</taglib-uri>
+		<taglib-location>/WEB-INF/struts-template.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/struts-nested</taglib-uri>
+		<taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/struts-tiles</taglib-uri>
+		<taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+	</taglib>
+    <taglib>
+    	<taglib-uri>/jstl-core</taglib-uri>
+ 		<taglib-location>/WEB-INF/c.tld</taglib-location>
+  	</taglib>	
+    <taglib>
+    <taglib-uri>/fmt</taglib-uri>
+ 		<taglib-location>/WEB-INF/fmt.tld</taglib-location>
+  	</taglib>	
+    <taglib>
+    	<taglib-uri>/z</taglib-uri>
+ 		<taglib-location>/WEB-INF/z.tld</taglib-location>
+  	</taglib>	
+	<taglib>
+    <taglib-uri>/string</taglib-uri>
+ 		<taglib-location>/WEB-INF/taglibs-string.tld</taglib-location>
+  	</taglib>	  		
+	<taglib><!-- enables log4j from jsp pages: "http://jakarta.apache.org/taglibs/doc/log-doc" -->
+		<taglib-uri>/log</taglib-uri>
+		<taglib-location>/WEB-INF/taglibs-log.tld</taglib-location>
+	</taglib>
+
+
+    <!-- START: JOSSO security constraint
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>protected-resources</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>HEAD</http-method>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>hub</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/jsp/login-redirect.jsp</form-login-page>
+            <form-error-page>/jsp/login-redirect.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <security-role >
+        <description>Hub Role</description>
+        <role-name>hub</role-name>
+    </security-role>
+     END: JOSSO security constraint -->
+
+
+
+	<ejb-local-ref id="EJBLocalRef_1067809680479">
+		<ejb-ref-name>com/vh/manchester/ejb/DifficultyHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.DifficultyHome</local-home>
+		<local>com.vh.manchester.ejb.Difficulty</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#Difficulty</ejb-link>
+	</ejb-local-ref>
+	<ejb-local-ref id="EJBLocalRef_1067809680519">
+		<ejb-ref-name>com/vh/manchester/ejb/LocaleHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.LocaleHome</local-home>
+		<local>com.vh.manchester.ejb.Locale</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#Locale</ejb-link>
+	</ejb-local-ref>
+	<ejb-local-ref id="EJBLocalRef_1067809680569">
+		<ejb-ref-name>com/vh/manchester/ejb/PriorityHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.PriorityHome</local-home>
+		<local>com.vh.manchester.ejb.Priority</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#Priority</ejb-link>
+	</ejb-local-ref>
+	<ejb-local-ref id="EJBLocalRef_1067809680579">
+		<ejb-ref-name>com/vh/manchester/ejb/TaskHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.TaskHome</local-home>
+		<local>com.vh.manchester.ejb.Task</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#Task</ejb-link>
+	</ejb-local-ref>
+	<ejb-local-ref id="EJBLocalRef_1067809680599">
+		<ejb-ref-name>com/vh/manchester/ejb/TaskStatusHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.TaskStatusHome</local-home>
+		<local>com.vh.manchester.ejb.TaskStatus</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#TaskStatus</ejb-link>
+	</ejb-local-ref>
+	<ejb-local-ref id="EJBLocalRef_1067809680609">
+		<ejb-ref-name>com/vh/manchester/ejb/TaskTypeHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.TaskTypeHome</local-home>
+		<local>com.vh.manchester.ejb.TaskType</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#TaskType</ejb-link>
+	</ejb-local-ref>
+	<ejb-local-ref id="EJBLocalRef_1067809680629">
+		<ejb-ref-name>com/vh/manchester/ejb/UserHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.UserHome</local-home>
+		<local>com.vh.manchester.ejb.User</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#User</ejb-link>
+	</ejb-local-ref>
+	<ejb-local-ref id="EJBLocalRef_1067809680649">
+		<ejb-ref-name>com/vh/manchester/ejb/UserTypeHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.UserTypeHome</local-home>
+		<local>com.vh.manchester.ejb.UserType</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#UserType</ejb-link>
+	</ejb-local-ref>
+	<ejb-local-ref id="EJBLocalRef_1081106456124">
+		<ejb-ref-name>com/vh/manchester/ejb/ProjectHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.ProjectHome</local-home>
+		<local>com.vh.manchester.ejb.Project</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#Project</ejb-link>
+	</ejb-local-ref>
+	<ejb-local-ref id="EJBLocalRef_1081106456125">
+		<ejb-ref-name>com/vh/manchester/ejb/ProjectAccessHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.ProjectAccessHome</local-home>
+		<local>com.vh.manchester.ejb.ProjectAccess</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#ProjectAccess</ejb-link>
+	</ejb-local-ref>
+	<ejb-local-ref id="EJBLocalRef_1082229543875">
+		<ejb-ref-name>com/vh/manchester/ejb/AccessHome</ejb-ref-name>
+		<ejb-ref-type>Entity</ejb-ref-type>
+		<local-home>com.vh.manchester.ejb.AccessHome</local-home>
+		<local>com.vh.manchester.ejb.Access</local>
+		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#Access</ejb-link>
+	</ejb-local-ref>	
+
+</web-app>

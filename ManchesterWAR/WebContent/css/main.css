@@ -1,0 +1,168 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "verdana";
+    font-size: 12px;
+    margin: 0cm;
+}
+
+
+table {
+	font-family: "verdana";
+	font-size: 12px;
+	border: 1px;
+	border-color: #cccccc;
+	width: 100%;
+}
+
+fieldset {
+	border: 1px solid green;
+}
+
+legend {
+	padding: 0.2em 0.5em;
+	border: 1px solid green;
+	color: green;
+	font-size: 90%;
+	text-align: right;
+	margin: 0 0 0 25;
+}
+
+label {
+	float: left;
+	width: 25%;
+	margin-right: 0.5em;
+	padding-top: 0.2em;
+	text-align: right;
+	font-weight: bold;
+}
+
+.tablefortasktableview {
+	font: normal normal normal 11px/16px arial,helvetica,sans-serif;
+	width: 100%;
+}
+
+.tableforcreateproject {
+	font: normal normal normal 11px/16px arial,helvetica,sans-serif;
+	width: 55%;
+	margin: 20 0 0 115; 
+}
+
+tr.h {
+	background-color: #bce954;
+}
+
+.trodd {
+	background-color: #ffffff;
+}
+
+.treven {
+	background-color: #dddddd;
+}
+
+td.tdfortasktableview {
+	font-family: tahoma, sans-serif;
+	white-space: nowrap;
+	font-size: 11px;
+	line-height: 18px;
+	padding: 0 2 0 2;	
+	border-bottom: 1px solid #9999cc;
+}
+
+.tdheader {
+	text-align: left;
+	font-family: "sans-serif,arial";
+	font-size: 11px;
+	color: black;
+	padding-left: 10;
+	border-bottom: 1px solid #9999cc;
+}
+
+.tdlabel {
+	text-align: right;
+	font-weight: bold;
+	font-family: "tahoma,arial";
+	color: green;
+	width: 200;
+}
+
+td.progress {
+	height: 10px;
+	line-height: 10px;
+	background-color: #339900;
+}
+
+td.noprogress {
+	font: normal 11px arial,helvetica,sans-serif;
+	text-align: center;
+}
+
+.thfortasktableview {
+	background: #cccccc;
+	border-bottom: 1px solid black;
+	border-left: 1px solid white;
+	border-right: 1px solid black;
+	border-top: 1px solid white;
+	margin: 0px;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.dropdownclass {
+	font-family: arial;
+	font-size: 11px;
+	line-height: 18px;
+}
+
+.projectdropdown {
+	width: 150px;
+	font-size: 11px;
+}
+
+.formdropdown {
+	width: 350px;
+	margin: 0 10 0 0;
+}
+
+.button {
+	background-color: #003366;
+	font-family: tahoma,arial;
+	color: #ffffff;
+	font-size: 11px;
+	font-weight: bold;
+	width: 100px;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: #3333cc;
+}
+
+a:hover {
+	color: #3333cc;
+	text-decoration: underline
+}
+
+a.nostyle:link    {color:#3333cc; text-decoration:none}
+a.nostyle:visited {color:#3333cc; text-decoration:none}
+a.nostyle:hover   {color:#3333cc; text-decoration:none}
+a.nostyle:active  {color:#3333cc; text-decoration:none}
+
+.requiredfieldstar {
+	color: #ff0000;
+}
+
+.requiredfieldexplanator {
+    color: #999999;
+    font-family: "verdana";
+    font-size: 10px;
+    text-align: left;
+    text-decoration: none;
+	margin-left: 30px;
+}
+
+ul {
+	margin-left: 30px;
+	margin-top: 0px;
+}
