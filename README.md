@@ -1,6 +1,6 @@
 # tech-hub
 
-This is a custom built, full blown issue tracker system.  It supports projects, users with different types, statistics, updates, and the usual features of modern ticketing systems.
+Tech Hub is an issue tracking system. Just as JIRA, Bugzilla and many others, it supports issue tracking on different projects by various users. Administrators have access to additional features such as progress reports on issues, projects and so forth.
 
 ## Creator
 
