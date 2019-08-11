@@ -1,12 +1,30 @@
-# tech-hub
+# Tech Hub
 
-Tech Hub is an issue tracking system. Just as JIRA, Bugzilla and many others, it supports issue tracking on different projects by various users. Administrators have access to additional features such as progress reports on issues, projects and so forth.
+Tech Hub is an issue tracking system.  Similar to JIRA, Bugzilla and many others, it supports ticketing & issue tracking on various projects.  
+Demo: [https://tech-hub.herokuapp.com/](https://tech-hub.herokuapp.com/)
+
+Features include:
+* issues are tracked under projects
+* unlimited projects
+* unlimited issues per project
+* admin console
+* user statistics
+* analytics
+
+## Install Dependencies
+
+1. Download PostgreSQL: [PostgreSQL](https://www.postgresql.org/)  
+ _On Mac:_ [Install Postgres.app](https://postgresapp.com/)
+
+## Useful Tips
+
+1. [TODO]
 
 ## Creator
 
-[Peter Szocs](http://peter.szocs.info/), Senior Software Developer at [Bloomberg LP](http://www.bloomberg.com/).
+[Peter Szocs](http://www.peterszocs.com), Tech Lead at Bloomberg LP.
 
-* https://twitter.com/szocspeter
-* https://www.facebook.com/szocs.peter
+* http://www.peterszocs.com/
+* https://medium.com/@pitanyc
+* https://github.com/pitanyc
 * https://www.linkedin.com/in/szocspeter
-* https://github.com/gepesz
