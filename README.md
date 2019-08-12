@@ -28,6 +28,14 @@ echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/pat
 psql postgres
 ALTER DATABASE peter RENAME TO manchester;
 ```
+2. Seed database:  
+```bash
+cd tech-hub/ManchesterEJB/ejbModule/META-INF/postgre/
+psql manchester
+\i Postgre_Table.ddl
+\i Postgre_Sequence.ddl
+\i Postgre_Data.ddl
+```
 
 ## Useful Tips
 
