@@ -15,8 +15,14 @@ Features include:
 
 1. Download PostgreSQL: [PostgreSQL](https://www.postgresql.org/)  
  _On Mac:_ [Install Postgres.app](https://postgresapp.com/)
-2. Download pgAdmin4: [pgAdmin4](https://www.pgadmin.org/)  
- _On Mac:_ [Install pgAdmin4](https://www.pgadmin.org/download/pgadmin-4-macos/)
+
+## Build Application
+
+1. Create database:  
+```bash
+psql postgres
+ALTER DATABASE peter RENAME TO manchester;
+```
 
 ## Useful Tips
 
