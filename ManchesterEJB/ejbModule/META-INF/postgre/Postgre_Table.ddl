@@ -1,5 +1,3 @@
-
-
 DROP TABLE public.access1 CASCADE;
 DROP TABLE public.difficulty CASCADE;
 DROP TABLE public.locale CASCADE;
@@ -113,10 +111,3 @@ CREATE TABLE public.task (
   CONSTRAINT fk_task_tasktype FOREIGN KEY (tasktype_id) REFERENCES public.tasktype (id) ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT fk_task_who FOREIGN KEY (who_id) REFERENCES public.user1 (id) ON UPDATE NO ACTION ON DELETE NO ACTION
 ) WITH OIDS;
-
-
-
-
-
-
-
