@@ -36,6 +36,12 @@ psql manchester
 \i Postgre_Sequence.ddl
 \i Postgre_Data.ddl
 ```
+3. Create database user:
+```bash
+psql manchester
+CREATE USER man WITH ENCRYPTED PASSWORD 'man';
+GRANT ALL PRIVILEGES ON DATABASE manchester TO man;
+```
 
 ## Useful Tips
 
