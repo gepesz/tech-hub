@@ -13,17 +13,21 @@ Features include:
 
 ## Install Dependencies
 
-1. Download PostgreSQL: [PostgreSQL](https://www.postgresql.org/)  
+1. Download Ant: [Apache Ant](https://ant.apache.org/)  
+ _On Mac:_ [How to Apache Ant on Mac OS X](https://www.mkyong.com/ant/how-to-apache-ant-on-mac-os-x/)
+2. Download TomEE: [Apache TomEE Webprofile](https://tomee.apache.org/download-ng.html)  
+ _On Mac:_ ```brew install tomee-webprofile```
+3. Download PostgreSQL: [PostgreSQL](https://www.postgresql.org/)  
  _On Mac:_ [Install Postgres.app](https://postgresapp.com/)
-2. Configure your *$PATH* to include PostgreSQL command line tools:
+4. Configure your *$PATH* to include PostgreSQL command line tools:
 ```bash
 sudo mkdir -p /etc/paths.d &&
 echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
-
-(then: restart your terminal)
 ```
-3. Download [database driver jar](https://jdbc.postgresql.org/download.html) into the tomee/lib folder.
-4. Add datasource to **tomee/conf/tomee.xml**:
+*Then:* restart your terminal.
+
+5. Download [database driver jar](https://jdbc.postgresql.org/download.html) into the tomee/lib folder.
+6. Add datasource to **tomee/conf/tomee.xml**:
 ```bash
 <?xml version="1.0" encoding="UTF-8"?>
 <tomee>  
