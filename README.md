@@ -63,7 +63,7 @@ GRANT ALL PRIVILEGES ON DATABASE manchester TO man;
 ```
 4. Run: ```ant -f build/build.xml```
 5. Deploy app by creating a soft link to it:  
- ```ln -s $(pwd)/WebContent $CATALINA_HOME/webapps/tech-hub```
+ ```ln -s $(pwd)/ManchesterWAR/WebContent $CATALINA_HOME/webapps/tech-hub```
 
 ## Useful Tips
 
