@@ -23,7 +23,7 @@ echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/pat
 (then: restart your terminal)
 ```
 3. Download [database driver jar](https://jdbc.postgresql.org/download.html) into the tomee/lib folder.
-4. Configure datasource: edit **tomee/conf/tomee.xml**:
+4. Add datasource to **tomee/conf/tomee.xml**:
 ```bash
 <?xml version="1.0" encoding="UTF-8"?>
 <tomee>  
