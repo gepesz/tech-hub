@@ -15,10 +15,11 @@ Features include:
 
 1. Download PostgreSQL: [PostgreSQL](https://www.postgresql.org/)  
  _On Mac:_ [Install Postgres.app](https://postgresapp.com/)
-2. Configure your *$PATH* to use the included command line tools:
+2. Configure your *$PATH* to include PostgreSQL command line tools:
 ```bash
 sudo mkdir -p /etc/paths.d &&
 echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
+(restart your terminal)
 ```
 3. Download database driver: put [database driver jar](https://jdbc.postgresql.org/download.html) into tomee/lib folder.
 4. Configure datasource: edit **tomee/conf/tomee.xml**:
