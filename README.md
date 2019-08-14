@@ -57,6 +57,12 @@ psql manchester
 CREATE USER man WITH ENCRYPTED PASSWORD 'man';
 GRANT ALL PRIVILEGES ON DATABASE manchester TO man;
 ```
+4. Deploy EJB:
+```bash
+cd $CATALINA_HOME/webapps
+ln -s /PATH_TO/tech-hub/ManchesterEJB/ManchesterEJB.jar .
+```
+
 
 ## Useful Tips
 
