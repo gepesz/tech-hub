@@ -25,7 +25,7 @@ echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/pat
 ```bash
 <?xml version="1.0" encoding="UTF-8"?>
 <tomee>  
-  <Resource id="jdbc/db" type="javax.sql.DataSource">
+  <Resource id="jdbc/ManchesterDS_Postgre" type="javax.sql.DataSource">
     jdbcDriver org.postgresql.Driver
     jdbcUrl jdbc:postgresql://localhost:5432/manchester
     userName man
