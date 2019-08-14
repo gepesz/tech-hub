@@ -19,7 +19,8 @@ Features include:
 ```bash
 sudo mkdir -p /etc/paths.d &&
 echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
-(restart your terminal)
+
+(then: restart your terminal)
 ```
 3. Download database driver: put [database driver jar](https://jdbc.postgresql.org/download.html) into tomee/lib folder.
 4. Configure datasource: edit **tomee/conf/tomee.xml**:
