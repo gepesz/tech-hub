@@ -1,0 +1,12 @@
+# Compiled files
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.war
+*.ear
+
+# OS files
+.DS_Store
