@@ -40,7 +40,7 @@ public class Monitor extends BaseAction {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response, ManchesterService man) throws Exception {
 		//if(IS_DEBUG) log.debug("inside");
 		
-		ArrayList arr = new ArrayList();
+		ArrayList<MonitorBean> arr = new ArrayList<MonitorBean>();
 
 		Iterator it = man.findAllUser().iterator();
 		while(it.hasNext()) {

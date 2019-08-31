@@ -20,8 +20,8 @@ package com.vh.manchester.util;
 public interface Constants {
 
   //SMTP server for email
-  public static final String SMTPServer="mail.speakeasy.net";
-  public static final boolean EMAIL_ENABLED=false;
+  public static final String SMTPServer     = "smtp.sendgrid.net";
+  public static final boolean EMAIL_ENABLED = true;
   
 
   //Hash passwords or not
@@ -45,22 +45,35 @@ public interface Constants {
 
 
   //DataSource JNDI name
-  //NOTE:(1) WebSphere: theDataSource = "jdbc/ManchesterDS_MySQL";
-  //	 (2) JBOSS:	    theDataSource = "java:/jdbc/ManchesterDS_MySQL";
-  public static final String theDataSource = "java:/jdbc/ManchesterDS_MySQL";
+  //NOTE:(1) WebSphere: theDataSource = "jdbc/ManchesterDS_Postgre";
+  //	 (2) JBOSS:	    theDataSource = "java:/jdbc/ManchesterDS_Postgre";
+  //     (3) TomEE:     theDataSource = "java:/jdbc/ManchesterDS_Postgre";
+  public static final String theDataSource = "java:/jdbc/ManchesterDS_Postgre";
 
 
   //EJB JNDI names
-  public static final String Access_HOME_NAME=     	   "java:comp/env/com/vh/manchester/ejb/AccessHome";
-  public static final String Difficulty_HOME_NAME=     "java:comp/env/com/vh/manchester/ejb/DifficultyHome";
-  public static final String Locale_HOME_NAME=         "java:comp/env/com/vh/manchester/ejb/LocaleHome";
-  public static final String Priority_HOME_NAME=       "java:comp/env/com/vh/manchester/ejb/PriorityHome";
-  public static final String Project_HOME_NAME=        "java:comp/env/com/vh/manchester/ejb/ProjectHome";
-  public static final String ProjectAccess_HOME_NAME=  "java:comp/env/com/vh/manchester/ejb/ProjectAccessHome";
-  public static final String Task_HOME_NAME=           "java:comp/env/com/vh/manchester/ejb/TaskHome";
-  public static final String TaskStatus_HOME_NAME=     "java:comp/env/com/vh/manchester/ejb/TaskStatusHome";
-  public static final String TaskType_HOME_NAME=       "java:comp/env/com/vh/manchester/ejb/TaskTypeHome";
-  public static final String User_HOME_NAME=           "java:comp/env/com/vh/manchester/ejb/UserHome";
-  public static final String UserType_HOME_NAME=       "java:comp/env/com/vh/manchester/ejb/UserTypeHome";
+//   public static final String Access_HOME_NAME        = "java:comp/env/ejb/Access";
+//   public static final String Difficulty_HOME_NAME    = "java:comp/env/ejb/DifficultyHome";
+//   public static final String Locale_HOME_NAME        = "java:comp/env/ejb/LocaleHome";
+//   public static final String Priority_HOME_NAME      = "java:comp/env/ejb/PriorityHome";
+//   public static final String Project_HOME_NAME       = "java:comp/env/ejb/ProjectHome";
+//   public static final String ProjectAccess_HOME_NAME = "java:comp/env/ejb/ProjectAccessHome";
+//   public static final String Task_HOME_NAME          = "java:comp/env/ejb/TaskHome";
+//   public static final String TaskStatus_HOME_NAME    = "java:comp/env/ejb/TaskStatusHome";
+//   public static final String TaskType_HOME_NAME      = "java:comp/env/ejb/TaskTypeHome";
+//   public static final String User_HOME_NAME          = "java:comp/env/ejb/UserHome";
+//   public static final String UserType_HOME_NAME      = "java:comp/env/ejb/UserTypeHome";
+
+  public static final String Access_HOME_NAME        = "java:comp/env/com/vh/manchester/ejb/AccessHome";
+  public static final String Difficulty_HOME_NAME    = "java:comp/env/com/vh/manchester/ejb/DifficultyHome";
+  public static final String Locale_HOME_NAME        = "java:comp/env/com/vh/manchester/ejb/LocaleHome";
+  public static final String Priority_HOME_NAME      = "java:comp/env/com/vh/manchester/ejb/PriorityHome";
+  public static final String Project_HOME_NAME       = "java:comp/env/com/vh/manchester/ejb/ProjectHome";
+  public static final String ProjectAccess_HOME_NAME = "java:comp/env/com/vh/manchester/ejb/ProjectAccessHome";
+  public static final String Task_HOME_NAME          = "java:comp/env/com/vh/manchester/ejb/TaskHome";
+  public static final String TaskStatus_HOME_NAME    = "java:comp/env/com/vh/manchester/ejb/TaskStatusHome";
+  public static final String TaskType_HOME_NAME      = "java:comp/env/com/vh/manchester/ejb/TaskTypeHome";
+  public static final String User_HOME_NAME          = "java:comp/env/com/vh/manchester/ejb/UserHome";
+  public static final String UserType_HOME_NAME      = "java:comp/env/com/vh/manchester/ejb/UserTypeHome";
 
 }

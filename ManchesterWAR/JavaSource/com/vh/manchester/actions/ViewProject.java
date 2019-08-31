@@ -49,7 +49,7 @@ public class ViewProject extends BaseAction {
 		Project p = man.findProjectById(id);
 
 		// iterate thru all users, populate accessbean with info
-		ArrayList arr = new ArrayList();    // holds the project access beans		
+		ArrayList<AccessBean> arr = new ArrayList<AccessBean>();    // holds the project access beans		
 		Iterator it = ((Collection)request.getSession().getServletContext().getAttribute(Constants_Scope.ALL_USERS_KEY)).iterator();
 		while(it.hasNext()) {
 			User user = (User) it.next();

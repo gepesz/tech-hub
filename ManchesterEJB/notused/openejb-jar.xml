@@ -1,0 +1,5 @@
+<openejb-jar>
+  <ejb-deployment ejb-name="Access">
+    <jndi name="com/vh/manchester/ejb/AccessHome"/> 
+  </ejb-deployment>
+</openejb-jar>

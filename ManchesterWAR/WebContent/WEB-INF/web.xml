@@ -201,7 +201,7 @@
 		<ejb-ref-type>Entity</ejb-ref-type>
 		<local-home>com.vh.manchester.ejb.UserHome</local-home>
 		<local>com.vh.manchester.ejb.User</local>
-		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#User</ejb-link>
+		<ejb-link>ManchesterEJB.jar#User</ejb-link>
 	</ejb-local-ref>
 	<ejb-local-ref id="EJBLocalRef_1067809680649">
 		<ejb-ref-name>com/vh/manchester/ejb/UserTypeHome</ejb-ref-name>
@@ -229,7 +229,7 @@
 		<ejb-ref-type>Entity</ejb-ref-type>
 		<local-home>com.vh.manchester.ejb.AccessHome</local-home>
 		<local>com.vh.manchester.ejb.Access</local>
-		<ejb-link>ManchesterEJB.jar/ManchesterEJB.jar#Access</ejb-link>
+		<ejb-link>ManchesterEJB.jar#Access</ejb-link>
 	</ejb-local-ref>	
 
 </web-app>

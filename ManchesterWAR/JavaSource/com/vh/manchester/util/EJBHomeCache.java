@@ -30,7 +30,7 @@ import org.apache.log4j.Logger;
  */
 public class EJBHomeCache {
 
-  private static HashMap homes=new HashMap();
+  private static HashMap<String, EJBLocalHome> homes=new HashMap<String, EJBLocalHome>();
   private static InitialContext mContext;
   private static Logger log = Logger.getLogger(EJBHomeCache.class);
 

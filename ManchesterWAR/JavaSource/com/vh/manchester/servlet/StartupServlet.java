@@ -28,6 +28,7 @@ import com.vh.manchester.bean.DateBean;
 import com.vh.manchester.ejb.Locale;
 import com.vh.manchester.service.ManchesterService;
 import com.vh.manchester.service.ManchesterServiceImpl_MySQL;
+import com.vh.manchester.service.ManchesterServiceImpl_Postgre;
 import com.vh.manchester.util.ActionUtils;
 import com.vh.manchester.util.Constants;
 import com.vh.manchester.util.Constants_Scope;
@@ -79,7 +80,7 @@ public class StartupServlet extends HttpServlet implements Constants {
 	  try {
 		if(IS_DEBUG) log.debug("Setting up application scope...");
 		ServletContext context = this.getServletContext();
-		ManchesterService man = new ManchesterServiceImpl_MySQL();
+		ManchesterService man = new ManchesterServiceImpl_Postgre();
 		context.setAttribute(Constants_Scope.MANCHESTERSVC_KEY,         man);
 		//context.setAttribute(Constants_Scope.LABELS_KEY,              this.getResources(request));
 		//context.setAttribute(Constants_Scope.SSOENABLED_KEY,          new Boolean(false));
@@ -93,7 +94,7 @@ public class StartupServlet extends HttpServlet implements Constants {
 		context.setAttribute(Constants_Scope.ALL_PROJECTS_KEY,          man.findAllProject());
 		context.setAttribute(Constants_Scope.ALL_USERS_KEY,             man.findAllUser());
 				
-		ArrayList al = new ArrayList();
+		ArrayList<DateBean> al = new ArrayList<DateBean>();
 		al.add( new DateBean("Today",      1) );
 		al.add( new DateBean("Last week",  2) );
 		al.add( new DateBean("Last month", 3) );

@@ -1,7 +1,8 @@
-<project name="manchester" default="prepare" basedir="..">
+<project name="manchester" default="deploy" basedir="..">
 
   <!-- ==================== Prepare Target ================================== -->
   <target name="prepare"  description="Defines all environments and base directories used by build">
+    <property environment="env"/>
     <property name="company.name"       value="ZLocker Inc."/>
     <property name="ear.name"           value="ManchesterEAR.ear"/>
     <property name="ejbjar.name"        value="ManchesterEJB.jar"/>
@@ -18,6 +19,7 @@
     <property name="webinf.lib"         value="${webinf}/lib"/>
     <property name="temp.dir"           value="${basedir}/temp"/>
     <property name="build.lib"          value="${basedir}/build/lib"/>
+    <property name="tomee.apps"         value="${env.CATALINA_HOME}/webapps"/>
 
     <tstamp>
       <format property="time" pattern="MM/dd/yyyy hh:mmaa" locale="en"/>
@@ -37,34 +39,30 @@
   </target><!-- =========== END OF: prepare target ========================== -->
 
 
-
   <!-- ==================== Compile_ejb Target ============================== -->
   <target name="compile_ejb" depends="prepare" description="Compiles EJBs into ${ejb.home}">
 	<javac srcdir="${ejb.home}"
           destdir="${ejb.home}"
+includeantruntime="false"     
            debug="on"
      deprecation="off"
         optimize="on">
         <classpath refid="base.classpath"/>
+        <compilerarg value="-Xlint:unchecked"/>
     </javac> 
   </target><!-- =========== END OF: compile_ejb target ====================== -->
 
 
-
   <!-- ==================== Compile Target ================================== -->
   <target name="compile" depends="compile_ejb" description="Compiles java classes into ${webinf.classes}">
-
-	<!--
-    <property name="cp" refid="full.classpath"/>
-    <echo message="Classpath is ${cp}"/>
-	-->
-
 	<javac srcdir="${javasource.home}"
           destdir="${webinf.classes}"
+includeantruntime="false"     
            debug="on"
      deprecation="off"
         optimize="on">
         <classpath refid="base.classpath" />
+        <compilerarg value="-Xlint:unchecked"/>
     </javac> 
 
     <copy todir="${webinf.classes}">
@@ -72,9 +70,7 @@
         <include name="**/*.properties"/>
       </fileset>
     </copy>
-
   </target><!-- =========== END OF: compile target ========================== -->
-
 
 
   <!-- ==================== Compile_all Target ============================== -->
@@ -85,10 +81,9 @@
   </target><!-- =========== END OF: compile_all target ====================== -->
 
 
-
-  <!-- ==================== EJBJAR Target =================================== -->
-  <target name="ejbjar" depends="compile_ejb" description="Creates the ejb-jar file">
-    
+  <!-- ==================== EJB Target =================================== -->
+  <target name="ejb" depends="compile_ejb" description="Creates the ejb-jar file">
+    <delete file="${ejb.dir}/${ejbjar.name}"/>
 	<jar destfile="${ejb.dir}/${ejbjar.name}" basedir="${ejb.home}" includes="**/*.class">
           <manifest>
             <attribute name="Created-By" value="${company.name}"/>
@@ -97,11 +92,17 @@
             <include name="*.xml"/>
           </metainf>
 	</jar>
+	<copy file="${ejb.dir}/${ejbjar.name}" todir="${tomee.apps}" overwrite="true"/>
+  </target><!-- =========== END OF: ejb target =========================== -->
 
-  </target><!-- =========== END OF: ejbjar target =========================== -->
+
+  <!-- ==================== Deploy Target =================================== -->
+  <target name="deploy" depends="ejb,compile_all" description="Deploys the application to localhost."/>
+  <!-- ==================== END OF: deploy target =========================== -->
+
 
   <!-- ==================== EAR Target ====================================== -->
-  <target name="ear" depends="ejbjar,compile" description="Creates ear file.">
+  <target name="ear" depends="ejb,compile" description="Creates ear file.">
 
     <delete dir="${temp.dir}"/>
     <mkdir dir="${temp.dir}"/>

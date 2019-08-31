@@ -27,7 +27,6 @@ import org.apache.struts.validator.DynaValidatorForm;
 import com.vh.manchester.ejb.Project;
 import com.vh.manchester.ejb.User;
 import com.vh.manchester.service.ManchesterService;
-import com.vh.manchester.service.ManchesterServiceImpl_Postgre;
 import com.vh.manchester.util.ActionUtils;
 import com.vh.manchester.util.Constants;
 import com.vh.manchester.util.Constants_Scope;

@@ -215,27 +215,27 @@ public class Mailer {
 			String toName     = task.getWho().getUsername();
 			String toAddr     = task.getWho().getEmail();
 			String toLocale   = task.getWho().getLocale().getLoc();
-      String subject, body;
+            String subject, body;
 
-      HashSet set = new HashSet();                              //contains email addresses already emailed
-      subject = createSubject(task, request, toLocale, udu);    //send email to task assignee...
-      body    = createBody(task, request, toLocale, udu);
-      sendHtmlMessage(fromName, fromAddr, toName, toAddr, subject, body);
-      set.add(toAddr);
-      if(!set.contains(fromAddr)) {                             //send email to task creator...
-        subject = createSubject(task, request, fromLocale, udu);
-        body    = createBody(task, request, fromLocale, udu);
-        sendHtmlMessage(fromName, fromAddr, fromName, fromAddr, subject, body);            
-      }
-      set.add(fromAddr);
-      if((udu!=null) && !(set.contains(udu.getEmail()))) {      //send email to user doing the update...
-        String uduName   = udu.getUsername();
-        String uduAddr   = udu.getEmail();
-        String uduLocale = udu.getLocale().getLoc();
-        subject = createSubject(task, request, uduLocale, udu);
-        body    = createBody(task, request, uduLocale, udu);
-        sendHtmlMessage(fromName, fromAddr, uduName, uduAddr, subject, body);        
-      }
+            HashSet<String> set = new HashSet<String>();                              //contains email addresses already emailed
+            subject = createSubject(task, request, toLocale, udu);    //send email to task assignee...
+            body    = createBody(task, request, toLocale, udu);
+            sendHtmlMessage(fromName, fromAddr, toName, toAddr, subject, body);
+            set.add(toAddr);
+            if(!set.contains(fromAddr)) {                             //send email to task creator...
+                subject = createSubject(task, request, fromLocale, udu);
+                body    = createBody(task, request, fromLocale, udu);
+                sendHtmlMessage(fromName, fromAddr, fromName, fromAddr, subject, body);            
+            }
+            set.add(fromAddr);
+            if((udu!=null) && !(set.contains(udu.getEmail()))) {      //send email to user doing the update...
+                String uduName   = udu.getUsername();
+                String uduAddr   = udu.getEmail();
+                String uduLocale = udu.getLocale().getLoc();
+                subject = createSubject(task, request, uduLocale, udu);
+                body    = createBody(task, request, uduLocale, udu);
+                sendHtmlMessage(fromName, fromAddr, uduName, uduAddr, subject, body);        
+            }
 		} catch(Exception e) {
 			log.error("Send email error: " + e.getMessage());
 			e.printStackTrace();

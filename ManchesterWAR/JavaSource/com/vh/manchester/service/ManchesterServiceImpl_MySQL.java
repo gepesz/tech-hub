@@ -170,7 +170,7 @@ public class ManchesterServiceImpl_MySQL implements ManchesterService, Constants
 	 * @see com.vh.manchester.service.manchester.ManchesterService#findTasks(String, String)
 	 */
   	public ArrayList findTasks(Integer projectId, Integer status, Date after, Date before, Integer assignedTo, Integer reportedBy, String searchString) throws Exception {
-  		ArrayList al = new ArrayList();
+  		ArrayList<TaskBean> al = new ArrayList<TaskBean>();
   		
   		// creating SQL query string
   		String mSQLQry = "SELECT a.id, a.tasktype_id, a.title, a.summary, a.plannedDate, b.desc1, c.desc1, d.desc1, e.username, a.progress ";
