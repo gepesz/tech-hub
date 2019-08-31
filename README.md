@@ -62,12 +62,8 @@ CREATE USER man WITH ENCRYPTED PASSWORD 'man';
 GRANT ALL PRIVILEGES ON DATABASE manchester TO man;
 ```
 4. Run: ```ant -f build/build.xml```
-5. Deploy EJB:
-```bash
-cd $CATALINA_HOME/webapps
-ln -s /PATH_TO/tech-hub/ManchesterEJB/ManchesterEJB.jar .
-```
-
+5. Deploy app by creating a soft link to it:  
+ ```ln -s $(pwd)/ManchesterWAR/WebContent $CATALINA_HOME/webapps/tech-hub```
 
 ## Useful Tips
 
